@@ -1,0 +1,17 @@
+.navLink {
+    padding: 12.5px 20px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.activeNavLink {
+    background-color: #73869c;
+}
+
+.navBar {
+    background-color: #465362;
+    padding: 25px 80px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.9);
+}

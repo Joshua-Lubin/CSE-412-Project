@@ -1,0 +1,49 @@
+.restaurant {
+    padding: 40px 80px;
+}
+
+.restaurantInfo {
+    margin-bottom: 20px;
+}
+
+.item {
+    background-color: #ededed;
+    border-color: #c9c9c9;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12.5px;
+    width: fit-content;
+    padding: 12.5px 20px;
+    max-width: 300px;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item div {
+    font-size: 14px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: -20px;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+
+.sectionHeader {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}

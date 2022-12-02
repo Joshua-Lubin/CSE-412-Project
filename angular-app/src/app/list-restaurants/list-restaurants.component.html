@@ -1,1 +1,23 @@
-<p>list-restaurants works!</p>
+<div class="container">
+    <form>
+        <input name="search" type="text" class="searchInput" placeholder="Search" [(ngModel)]="search"/>
+        <button type="submit" class="button" (click)="searchClick()">Search</button>
+    </form>
+    <button (click)="sortClick()" class="button" style="display: block;" [disabled]="params?.['sortByRating'] !== undefined">Sort by rating</button>
+    <div style="margin-top: 15px; margin-bottom: 20px;" *ngIf="params?.['sortByRating'] !== undefined || params?.['category'] !== undefined || params?.['search'] !== undefined">
+        <h2 style="margin:0; margin-bottom: 5px">Filters</h2>
+        <div *ngIf="params?.['sortByRating'] !== undefined">Sort by rating</div>
+        <div *ngIf="params?.['category'] !== undefined"><span style="font-weight: 600">Category:</span> {{ params['category'] }}</div>
+        <div *ngIf="params?.['search'] !== undefined"><span style="font-weight: 600">Search:</span> {{ params['search'] }}</div>
+        <button class="button" (click)="clearFilters()" style="margin-top: 15px">Clear Filters</button>
+    </div>
+    <div class="flexContainer">
+        <a *ngFor="let restaurant of restaurants" class="card" routerLink="/restaurant" [queryParams]="{ restaurantName: restaurant.restaurantName }">
+            <h1 style="margin: 0; margin-bottom: 10px;">{{ restaurant.restaurantName }}</h1>
+            <div><span style="font-weight: 600">Phone number:</span> {{ restaurant.phoneNumber }}</div>
+            <div><span style="font-weight: 600">Address:</span> {{ restaurant.address }}</div>
+            <div><span style="font-weight: 600">Rating:</span> {{ restaurant.rating }}</div>
+            <div><span style="font-weight: 600">Categories: </span><span *ngFor="let category of restaurant.categories; let isLast = last">{{ category.categoryName }}{{ isLast ? "" : ", " }}</span></div>
+        </a>
+    </div>
+</div>

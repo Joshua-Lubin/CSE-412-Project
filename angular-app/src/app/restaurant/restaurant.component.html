@@ -1,1 +1,23 @@
-<p>restaurant works!</p>
+<div class="restaurant">
+    <div class="restaurantInfo">
+        <h1>{{ restaurantData?.restaurant?.restaurantName }}</h1>
+        <div><span style="font-weight: 600">Phone number:</span> {{ restaurantData?.restaurant?.phoneNumber }}</div>
+        <div><span style="font-weight: 600">Address:</span> {{ restaurantData?.restaurant?.address }}</div>
+        <div><span style="font-weight: 600">Rating:</span> {{ restaurantData?.restaurant?.rating }}</div>
+        <div><span style="font-weight: 600">Categories: </span><span *ngFor="let category of restaurantData?.categories; let isLast = last">{{ category.categoryName }}{{ isLast ? "" : ", " }}</span></div>
+    </div>
+    <h2>{{ restaurantData?.menu?.menuName }} </h2>
+    <div *ngFor="let section of restaurantData?.menu?.sections" class="section">
+        <div class="sectionHeader">
+            <h3>{{ section.menuSectionName }}</h3>
+            <div>{{ section.menuSectionDescription }}</div>
+        </div>
+        <div class="itemsContainer">
+            <div *ngFor="let item of section.items" class="item">
+                <h4>{{ item.menuItemName }}</h4>
+                <div>${{ item.price.toFixed(2) }}</div>
+                <div style="font-size:12px">{{ item.menuItemDescription }}</div>
+            </div>
+        </div>
+    </div>
+</div>

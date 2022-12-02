@@ -1,5 +1,41 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Restaurant } from '../list-restaurants/list-restaurants.component';
+import { Category } from '../categories/categories.component';
+
+interface Review {
+  text: string;
+  reviewer: string;
+  reviewId: string;
+}
+
+interface MenuItem {
+  menuItemName: string;
+  menuItemDescription: string;
+  menuItemId: string;
+  price: number;
+}
+
+interface MenuSection {
+  menuSectionName: string;
+  menuSectionDescription: string | null;
+  menuSectionId: string;
+  items: MenuItem[];
+}
+
+interface Menu {
+  menuId: string;
+  menuName: string;
+  sections: MenuSection[];
+}
+
+interface RestaurantData {
+  restaurant: Restaurant;
+  menu: Menu;
+  reviews: Review[];
+  categories: Category[];
+}
 
 @Component({
   selector: 'app-restaurant',
@@ -8,16 +44,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  http: HttpClient;
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
-  constructor(http: HttpClient) {
-    this.http = http;
-  }
+  restaurantData?: RestaurantData;
 
-  async ngOnInit(): Promise<void> {
-    console.log(
-      this.http.post("http://localhost:3000/api/list-restaurants", {})
-    );
+  ngOnInit(): void {
+    this.route.queryParams
+      .subscribe(params => {
+        this.http.post<RestaurantData>("http://localhost:3000/api/get-restaurant", { restaurantName: params['restaurantName'] })
+          .subscribe((data) => { this.restaurantData = data });
+      });
   }
 
 }

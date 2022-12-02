@@ -1,6 +1,6 @@
-<div style="background-color: #465362; padding: 25px; box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.66);">
-  <a routerLink="/" style="background-color: #748496; padding: 10px; margin-right: 20px; color: white; text-decoration: none; border-radius: 5px;">Restaurants</a>
-  <a routerLink="/categories" style="background-color: #748496; padding: 10px; color: white; text-decoration: none; border-radius: 5px;">Categories</a>
+<div class="navBar">
+  <a routerLink="/" class="navLink" routerLinkActive="activeNavLink" [routerLinkActiveOptions]="{ exact: true }" queryParamsHandling="merge">Restaurants</a>
+  <a routerLink="/categories" class="navLink" routerLinkActive="activeNavLink" queryParamsHandling="merge">Categories</a>
 </div>
 
 <router-outlet></router-outlet>

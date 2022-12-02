@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ListRestaurantsComponent } from './list-restaurants/list-restaurants.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListRestaurantsComponent } from './list-restaurants/list-restaurants.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

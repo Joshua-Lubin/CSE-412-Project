@@ -2,10 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', async function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-
     const { Client } = require('pg');
     const client = new Client({
         host: "localhost",
@@ -19,6 +15,8 @@ router.post('/', async function (req, res, next) {
     if(req.body.restaurantName === undefined) {
         return;
     }
+
+    const categories = await client.query('SELECT "Category".* FROM public."RestaurantToCategory", public."Category" WHERE "restaurantName"=$1::text AND "Category"."categoryName"="RestaurantToCategory"."categoryName";', [req.body.restaurantName]);
 
     const reviewsQuery = await client.query('SELECT "Review".* FROM public."RestaurantToReview", public."Review" WHERE "restaurantName"=$1::text AND "RestaurantToReview"."reviewId"="Review"."reviewId";', [req.body.restaurantName]);
 
@@ -37,7 +35,8 @@ router.post('/', async function (req, res, next) {
     res.send({
         restaurant: restaurantQuery.rows[0],
         menu: menu,
-        reviews: reviewsQuery.rows
+        reviews: reviewsQuery.rows,
+        categories: categories.rows
     });
     await client.end();
 });

@@ -2,10 +2,6 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/', async function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-
     const { Client } = require('pg');
     const client = new Client({
         host: "localhost",
@@ -16,28 +12,39 @@ router.post('/', async function (req, res, next) {
     });
     await client.connect();
 
-    if (req.body.category !== undefined) {
-        const query = await client.query('SELECT "Restaurant".* FROM public."RestaurantToCategory", public."Restaurant" WHERE "categoryName"=$1::text AND "Restaurant"."restaurantName"="RestaurantToCategory"."restaurantName";', [req.body.category])
-        res.send(query.rows);
-        await client.end();
-        return;
+    let queryString = 'SELECT DISTINCT "Restaurant".* FROM public."Restaurant", public."RestaurantToCategory"'    
+    let parameters = [];
+
+    if(req.body.search !== undefined) {
+        queryString += ' WHERE "Restaurant"."restaurantName" LIKE $1::text'
+        parameters.push("%" + req.body.search + "%");
+        if(req.body.category !== undefined) {
+            queryString += ' AND "categoryName"=$2::text AND "Restaurant"."restaurantName"="RestaurantToCategory"."restaurantName"';
+            parameters.push(req.body.category);
+        }
+    }
+    else {
+        if(req.body.category !== undefined) {
+            queryString += ' WHERE "categoryName"=$1::text AND "Restaurant"."restaurantName"="RestaurantToCategory"."restaurantName"';
+            parameters.push(req.body.category);
+        }
     }
 
     if (req.body.sortByRating === true) {
-        const query = await client.query('SELECT * FROM public."Restaurant" ORDER BY "rating" DESC;')
-        res.send(query.rows);
-        await client.end();
-        return;
+        queryString += ' ORDER BY "rating" DESC';
     }
 
-    if(req.body.search !== undefined) {
-        const query = await client.query('SELECT * FROM public."Restaurant" WHERE "restaurantName" LIKE $1::text', ["%" + req.body.search + "%"])
-        res.send(query.rows);
-        await client.end();
-        return;
-    }
+    queryString += ';';
 
-    const query = await client.query('SELECT * FROM public."Restaurant";')
+    const query = await client.query(queryString, parameters);
+    for(let i = 0; i < query.rows.length; i++) {
+        query.rows[i] = {
+            ...query.rows[i],
+            categories: 
+                (await client.query('SELECT "Category".* FROM public."RestaurantToCategory", public."Category" WHERE "restaurantName"=$1::text AND "Category"."categoryName"="RestaurantToCategory"."categoryName";', [query.rows[i].restaurantName]))
+                    .rows
+        }
+    }
     res.send(query.rows);
     await client.end();
 });

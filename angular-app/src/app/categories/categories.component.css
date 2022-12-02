@@ -1,0 +1,28 @@
+.card {
+    background-color: #ededed;
+    border-color: #cfcfcf;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 12.5px;
+    width: fit-content;
+    padding: 15px 20px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.card:hover {
+    background-color: #cfcfcf;
+}
+
+.card h2 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.flexContainer {
+    padding: 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
