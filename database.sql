@@ -177,25 +177,28 @@ ALTER TABLE public."Review" OWNER TO postgres;
 --
 
 COPY public."Category" ("categoryName", link) FROM stdin;
-Pizza	/category/phoenix-az/pizza
-Italian	/category/phoenix-az/italian
 Family Friendly	\N
-American	/category/phoenix-az/american
-Burgers	/category/phoenix-az/burger
-Sandwich	/category/phoenix-az/sandwich
-Family Friendly	\N
-Comfort Food	/category/phoenix-az/comfort-food
-Pasta	/category/phoenix-az/pasta
-Salads	/category/phoenix-az/salad
+Sushi	/category/phoenix-az/sushi
 Sandwiches	\N
-Steak	\N
-Wings	/category/phoenix-az/wings
-American	/category/phoenix-az/american
-Fast Food	/category/phoenix-az/fast-food
-wings	\N
-Family Meals	/category/phoenix-az/family-meals
-Family Friendly	\N
+Sandwich	/category/phoenix-az/sandwich
+Pasta	/category/phoenix-az/pasta
 Group Friendly	\N
+Mexican	/category/phoenix-az/mexican
+Family Meals	/category/phoenix-az/family-meals
+Healthy	/category/phoenix-az/healthy
+Fast Food	/category/phoenix-az/fast-food
+Wings	/category/phoenix-az/wings
+Comfort Food	/category/phoenix-az/comfort-food
+Steak	\N
+Salads	/category/phoenix-az/salad
+American	/category/phoenix-az/american
+Asian	/category/phoenix-az/asian
+Pizza	/category/phoenix-az/pizza
+wings	\N
+Japanese	/category/phoenix-az/japanese
+Italian	/category/phoenix-az/italian
+Tacos	\N
+Burgers	/category/phoenix-az/burger
 \.
 
 
@@ -205,8 +208,12 @@ Group Friendly	\N
 
 COPY public."Menu" ("menuId", "menuName") FROM stdin;
 e5468e08-24d6-5867-985d-0fd38b7bf58a	Main Menu
-b82a3562-4c4c-49ec-8fe4-6c9f638a165a	Main Menu
 a81b6caa-cffa-54a1-b556-51aed94bac1e	Main Menu
+a47fc313-8938-5525-911c-e7917347c273	Main Menu
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	Main Menu
+5a52e241-5877-595f-ac33-6ec5fa96b6ce	Main Menu
+23b37dd2-760c-54c9-a675-bc5d907d9875	Main Menu
+54371d2f-1c83-494c-bea0-7abaf9319e6b	Main Menu
 \.
 
 
@@ -215,6 +222,204 @@ a81b6caa-cffa-54a1-b556-51aed94bac1e	Main Menu
 --
 
 COPY public."MenuItem" ("menuItemName", "menuItemDescription", price, "menuItemId") FROM stdin;
+2 for $25 (Price may vary by location or selection.)	Two Entrees + One Appetizer\n(For menu item descriptions, please see the regular menu item)	30.09	96fd41ee-7043-5a28-8cb3-67a8fefbbcea
+Triple Chocolate Meltdownr	Warm, rich, fudge-filled chocolate cake is drizzled with hot fudge. Served with vanilla ice cream.	9.59	1228fed5-994c-5f41-a02b-747293447628
+Blackened Cajun Salmon	6 oz. blackened salmon fillet grilled to perfection. Served with garlic mashed potatoes and steamed broccoli.	21.59	7dd8a66c-1b24-59e7-981c-9d6db7158c0b
+Sizzlin' Cheddar & Bacon Chicken Skillet	Sliced grilled chicken breast with melted Cheddar cheese, Applewood-smoked bacon and garlic mashed potatoes, topped with a rich Parmesan cream sauce. Paired with steamed broccoli and served sizzling to the table.	16.19	0960fea5-4194-5125-a357-3257ed6bbf2b
+NEW Garlic Parmesan Chicken Skillet		16.19	ab565305-0fd9-5df0-9e14-75fe382a7d22
+Bourbon Street Chicken & Shrimp	Let the good times roll with Cajun-seasoned chicken and blackened shrimp in buttery garlic and parsley served sizzling on a cast iron platter with saut‚ed mushrooms and onions. Served with garlic mashed potatoes.	20.39	5f3617a1-eff9-5338-a1f2-1ae6e95c85c1
+Bourbon Street Steak*	Big flavor from New Orleans. A grilled 8 oz. USDA Select Top Sirloin* is jazzed up with Cajun spices and garlic butter served sizzling on a cast iron platter with saut‚ed mushrooms and onions. Served with garlic mashed potatoes.	23.99	97debfc7-9793-540a-a39b-40420d364e0e
+Brew Pub Loaded Waffle Fries	Load up on fries and flavor with our crispy waffle fries topped with a blend of melted Cheddar cheeses, BLUE MOONr white Cheddar beer cheese and crispy Applewood-smoked bacon. Served with house-made buttermilk ranch dressing.	11.99	7a888c46-730f-54c8-8972-860e995843d5
+Crispy Cheese Bites	Golden, crispy and melty cheese bites, these favorites are served with house-made buttermilk ranch and firecracker mayo for dipping.	11.99	0c8145c2-ff6a-5ddc-8838-d05bc4f9de13
+The Classic Combo	All the classic apps you love - Boneless Wings, Spinach & Artichoke Dip, Chicken Quesadilla, and Mozzarella Sticks.	21.59	3c0961c5-6311-5255-a683-76e85f9aedcd
+Breadsticks with Alfredo Sauce	Five golden brown signature breadsticks brushed with buttery garlic and parsley. Served with creamy Alfredo sauce for dipping.	8.39	303e9e8a-8abc-5d02-8033-5e24eb381a42
+Neighborhood Nachos Chipotle Lime Chicken	Freshly made white corn tortilla chips are topped with grilled chicken, queso blanco, a blend of melted Cheddar cheeses, house-made pico de gallo, fresh jalape¤os, chopped cilantro, sour cream and guacamole.	16.79	5c2a19fa-0904-5047-850c-f17ce909ba67
+Neighborhood Nachos Beef	Freshly made white corn tortilla chips are topped with taco-seasoned ground beef, queso blanco, a blend of melted Cheddar cheeses, house-made pico de gallo, fresh jalape¤os, chopped cilantro, sour cream and guacamole.	16.79	ce1e1e75-c7b9-50a9-b3e0-b613a7325cc0
+White Queso Dip & Chips	Melty white queso served with freshly made white corn tortilla chips.	9.59	45ef74ca-36b7-591b-9d47-c054f90d8fac
+Chicken Quesadilla	Warm, grilled tortillas are loaded with chipotle lime chicken, house-made pico de gallo and a blend of melted Cheddar cheeses. Served with our chipotle lime salsa and sour cream.	14.39	f57f4bbb-9258-54ad-97d6-273f0b5896d7
+Spinach & Artichoke Dip	Creamy spinach and artichoke dip topped with Parmesan cheese.  Served with freshly made white corn tortilla chips and our chipotle lime salsa.	11.99	15f742c6-bc48-553b-9a1f-4b4ec1162808
+Chicken Wonton Tacos	Sweet Asian chile marinated grilled chicken stuffed into crispy wonton shells topped with our signature coleslaw and cilantro.	13.19	69485b69-1468-5c87-92d6-bff5a4c9dd18
+Boneless Wings	Crispy breaded pieces of tender boneless chicken tossed in your choice of sauce. Served with Bleu cheese or house-made ranch dressing with real buttermilk.	15.59	1d3ae392-e192-5009-a0ce-183efffbf59d
+Double Crunch Bone-in Wings	Twice battered and fried, these crisp outside, tender inside wings are tossed in your choice of sauce.  Served with Bleu cheese or house-made ranch dressing with real buttermilk.	19.19	683da624-dd3f-54c8-9c65-12c073ad50f9
+Brew Pub Pretzels & Beer Cheese Dip	Soft, Bavarian-style pretzel sticks are ready to dip in BLUE MOONr white Cheddar beer cheese and honey Dijon mustard.	11.99	7eb1d279-3e7c-5c06-9035-528934088f3b
+Mozzarella Sticks	Crispy outside with melty Mozzarella inside, this favorite is served with marinara sauce.	11.99	ffe160e0-722a-5453-865f-dc9818406e6e
+Soups & Salads	Choose a soup or salad	7.19	c2b601e4-a492-5be2-a37d-982feded1fd9
+8 oz. Top Sirloin*	Lightly seasoned USDA Select top sirloin* cooked to perfection and served hot off the grill. Served with garlic mashed potatoes and steamed broccoli.	22.79	a37c4db0-6daa-5a7b-b3e4-cbcf7262342d
+6 oz. Top Sirloin*	Lightly seasoned USDA Select Top Sirloin* cooked to perfection and served hot off the grill.  Served with garlic mashed potatoes and steamed broccoli.	20.39	89e2664f-16c0-542e-8fbb-a1eb9fe6370c
+Double-Glazed Baby Back Ribs	Full Rack.  Slow-cooked to fall off the bone tenderness. Slathered with your choice of sauce.	27.59	7599a26f-a270-5704-a45a-d699f1463c6e
+Bourbon Street Steak*	Big flavor from New Orleans. A grilled 8 oz. USDA Select Top Sirloin* is jazzed up with Cajun spices and garlic butter served sizzling on a cast iron platter with saut‚ed mushrooms and onions. Served with garlic mashed potatoes.	23.99	bdbcae4c-f8a4-5a4b-82e0-180251f74449
+Half Rack Double-Glazed Baby Back Ribs	Half Rack.  Slow-cooked to fall off the bone tenderness. Slathered with your choice of sauce.	21.59	92e1a1e4-f085-5ddf-a7d7-66fa0be9bf8d
+Shrimp 'N Parmesan Sirloin*	A popular take on surf 'n turf, this dish starts with a tender grilled 8 oz. USDA Select top sirloin* and is topped with saut‚ed blackened shrimp and our creamy lemon butter Parmesan sauce. Served with garlic mashed potatoes and steamed broccoli.	26.39	3021827c-2546-50bd-b18b-8ced206d484e
+Applebee'sr Riblets Plate	Smaller portion of the Applebee'sr Riblets Platter. Our famous slow cooked riblets, slathered in your choice of sauce.	16.79	00e01911-ab3f-5dc1-a9e8-87e8c4d7dc64
+Burrito Bowl	Your choice of freshly grilled meat or sofritas served in a delicious bowl with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese.	11.85	d7894be9-fffd-5a92-8bdc-d9c21d7d2d87
+Burrito	Your choice of freshly grilled meat or sofritas wrapped in a warm flour tortilla with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese.	11.85	cd5ba78e-58a0-53a2-82e4-a70ce1beb832
+Chips & Guacamole		5.85	19110b3b-1c26-5e5b-9de7-002e97878598
+Quesadilla	Cheese in a Flour Tortilla with your choice of meat, sofritas or fajita veggies and three included sides.	12.55	0919f3c8-3390-54a5-8e70-a00d9c5be545
+Large Chips & Large Queso Blanco		10.4	3a03a7d0-9eaf-5b1e-a6be-1a1dff89216e
+Burrito	Your choice of freshly grilled meat or sofritas wrapped in a warm flour tortilla with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese.	11.85	cd5ba78e-58a0-53a2-82e4-a70ce1beb832
+Burrito Bowl	Your choice of freshly grilled meat or sofritas served in a delicious bowl with rice, beans, or fajita veggies, and topped with guac, salsa, queso blanco, sour cream or cheese.	11.85	d7894be9-fffd-5a92-8bdc-d9c21d7d2d87
+Quesadilla	Cheese in a Flour Tortilla with your choice of meat, sofritas or fajita veggies and three included sides.	12.55	0919f3c8-3390-54a5-8e70-a00d9c5be545
+Salad	Your choice of meat or sofritas served with our fresh supergreens lettuce blend made of Romaine, Baby Kale, and Baby Spinach. Add beans, queso blanco, salsa, guacamole, sour cream or cheese and top it off with our signature Chipotle-Honey Vinaigrette.	11.85	4be675c9-1c20-5937-8d4c-fa4611b1176f
+Three Tacos	Tacos	11.85	b890dc6c-b776-5d45-855c-bdb9f25bb042
+One Taco	Taco	4.3	05ed8bf3-3d4d-57ad-8b09-95bcefe25fee
+Kid's Build Your Own	Your choice of meat, guacamole or queso, and two toppings to go with a pair of crispy corn or soft flour Tortillas.Includes fruit or kid's chips and organic juice or milk.	7.2	b5200025-040a-556e-a0da-3ff5b8af65c8
+Kid's Quesadilla	With a side of rice and beans. Includes fruit or kid's chips and organic juice or milk.	5.8	460e92b0-3022-5e9b-a92d-ae753759a525
+Whole30r Salad Bowl	NEW Garlic Guajillo Steak, Supergreens Lettuce Blend, Fajita Veggies, Fresh Tomato Salsa and Guacamole	19.85	8a297e9e-9d43-51a4-b5d1-4ec78a233e36
+Whole30r Salad Bowl	Supergreens Lettuce Blend, Chicken, Fajita Veggies, Fresh Tomato Salsa and Guacamole	15.3	409e3681-3290-5ff1-8f92-fdc0df9a00ee
+Whole30r Salad Bowl	Supergreens Lettuce Blend, Carnitas, Fajita Veggies, Fresh Tomato Salsa and Guacamole	16.15	cdb672ca-e291-55e0-a5fe-29db9786733c
+Keto Salad Bowl	Supergreens Lettuce Blend, Chicken, Fresh Tomato Salsa, Cheese and Guacamole	15.3	073e9fe3-cbc9-5228-bd9e-ca86483bdbdb
+Keto Salad Bowl	Supergreens Lettuce Blend, Steak, Tomatillo-Red Chili Salsa, Cheese and Guacamole	17.55	4c4cb3c7-ab6e-5844-9e7a-485fcce8f7cf
+High Protein Bowl	White Rice, Chicken, Steak, Black Beans, Tomatillo-Red Chili Salsa, Cheese and Shredded Romaine Lettuce	18.6	5d99668e-516a-5473-97b6-99735f991add
+Paleo Salad Bowl	Supergreens Lettuce Blend, Chicken, Fajita Veggies, Tomatillo-Green Chili Salsa and Guacamole	15.3	9c2c0624-d6ca-5816-b598-4497e12d7b23
+Vegetarian Salad Bowl	Supergreens Lettuce Blend, Brown Rice, Black Beans, Fajita Veggies, Fresh Tomato Salsa, and Guacamole	11.85	201e044c-9b73-54be-8d81-8f6be0786597
+Vegan Bowl	Sofritas, Brown Rice, Black Beans, Fresh Tomato Salsa, Roasted Chili-Corn Salsa, and Shredded Romaine Lettuce	11.85	75f7f91a-54f0-5f3d-a20b-971c29ba4d35
+Chips		2.4	cc4e28fc-8757-587a-b5ae-2b058b44a8ba
+Chips & Guacamole		5.85	19110b3b-1c26-5e5b-9de7-002e97878598
+Chips & Queso Blanco		5.85	8bdcef92-0221-50d2-a9ba-880c8a3d5edc
+Large Chips & Large Guacamole		10.4	55fa1a5e-5261-5049-84d9-18d133075e0e
+Side of Guacamole		3.45	075501b2-6a74-5b9f-b90a-abf3e1120838
+Large Chips & Large Queso Blanco		10.4	3a03a7d0-9eaf-5b1e-a6be-1a1dff89216e
+Chips & Fresh Tomato Salsa		3	d776de59-3055-5d9e-920b-1eb5c6117fa5
+Chips & Tomatillo-Red Chili Salsa		3	01e5163e-b28d-583b-814c-71f52a060588
+Chips & Tomatillo-Green Chili Salsa		3	020be16c-691f-5222-b3a2-cdc7bcccbc19
+Chips & Roasted Chili-Corn Salsa		3	9c4c62d5-8316-5362-a942-75d298c99f0a
+Large Side of Guacamole		6.9	d80bc78c-383b-5b2a-b7d5-7ddef6a743cb
+Side of Queso Blanco		3.45	2181a2b2-3155-5f0f-a239-72370e388f79
+Large Side of Queso Blanco		6.9	21183932-be85-5360-af6f-0bfb673fada9
+Tortilla on the Side		0.65	f56b1133-d90c-552b-b280-5837cff99c9e
+Mexican Coca-Cola		4.1	5c26a2fc-f08b-58a2-b0f2-0a56735a7419
+Blackberry Izze		4.25	9ec857e3-4a0e-5b3b-bdcd-1416ce3946ff
+Grapefruit Izze		4.25	ae347c2d-fb4e-50da-bbe1-78c986e0ee9a
+Apple Juice		4.25	6cd93ae7-81f3-58e6-8262-6bc74b362796
+Pineapple Orange Banana Juice		4.25	70761a7c-f6f4-56fa-8bcf-e6092cb8a9b6
+Peach Orange Juice		4.25	446eb5b7-bdee-5121-8d9d-21ff8a2662c8
+San Pellegrino Sparklingÿ		3.7	79ae1c72-032f-5a58-b18c-9223678c61f9
+Tractor Organic Black Tea		4.15	bb86e174-eb6b-57a3-a7e2-66e104e44d8f
+Tractor Organic Lemonade		4.15	f27ac13f-6fb3-5c1d-afe3-95c4fa765b65
+Bottled Water		3.75	1075e2dc-3a7a-50ad-b156-026697e03e0d
+Mexican Sprite		4.1	92a5105d-3ef5-5b2f-b842-f73e12763807
+The Del Taco	The Del Taco is inspired by the original and loaded with more of everything you love, like more seasoned beef, fresh house-grated cheddar cheese, crisp shredded lettuce and fresh diced tomatoes in a bigger, crunchy corn shell or a warm flour tortilla.	2.29	ab8e0744-bc7a-5f60-a744-be5e3d8920fe
+Caramel Cheesecake Bites	Piping hot bundles of sweet cheesecake and gooey caramel, enveloped in a light crispy shell. Choose from 2 Pc. or 4 Pc.	4.89	a1fa6f62-468c-5374-bfa1-0c185d753825
+Crinkle Cut Fries	They're famous for a reason! With all those golden, crispy curves they're the perfect side to a burger, taco, or burrito. Available in Small, Medium, and Macho.	3.29	b22a2a3d-9912-57b3-9c76-3c1e25640798
+Chips & Queso (Regular-sized)	Signature creamy Queso Blanco served with fresh house-made tortilla chips.	3.79	dd30a961-46e1-58e7-87ed-4f08b2b73947
+Cheddar Quesadilla	Fresh house-grated cheddar cheese, and tangy green sauce folded in a flour tortilla and flat-grilled to perfection.	4.89	e5d9c02e-cb91-5d77-88e3-1cacb5305910
+Single Tamale	Celebrate the holiday season with our Tamale. Filled with seasoned shredded pork, fire roasted salsa, stone ground corn masa and individually hand wrapped the authentic way with real corn husk. \n\nAvailable for a limited time only, 10AM - 10PM.	3.69	e333cdca-dc0c-57bc-a62b-0ae984f17c67
+Tamales - 2 Pack	Enjoy two of our seasoned shredded pork tamales. Filled with seasoned shredded pork, fire roasted salsa, stone ground corn masa and individually hand wrapped the authentic way with real corn husk. \n\nAvailable for a limited time only, 10AM - 10PM.	6.29	39b29693-29d6-5c35-8fa6-28435b8f236b
+Tamales - 4 Pack	Enjoy four of our seasoned shredded pork tamales. Filled with shredded seasoned pork, fire roasted salsa, stone ground corn masa and individually hand wrapped the authentic way with real corn husk. \n\nAvailable for a limited time only, 10AM - 10PM.	12.59	aa14d523-2b8e-5fa4-b68d-3aef3323197e
+Smothered Tamales	Two shredded seasoned pork tamales topped with your choice of zesty red and tangy green sauce, sour cream and chopped cilantro or beef chili, fresh house-grated cheddar cheese and cool sour cream. \n\nAvailable for a limited time only, 10AM - 10PM.	8.19	18ad47a3-0e94-54de-a4f3-0163add03b81
+Chicken Taco Del Carbon	Freshly grilled, marinated chicken, topped with fresh diced onions, chopped cilantro, and tangy green sauce, wrapped in a warm corn tortilla.	1.89	123c694c-9813-5c46-bb06-97c4e1e22a54
+Brooklyn Pie	Pepperoni, sausage and fresh basil - our pie of choice.	12.64	f7256940-90b0-5bb9-b513-a8d559432cc9
+Traditional Wings		9.76	f1a8d9bc-01cc-5e56-bc8c-f2f5be62f694
+Create Your Own Pizza 18"		25.29	abbbbcc3-34f6-58b1-804a-7658572807d0
+Create Your Own Pizza 14"		18.39	ada4899d-1521-5b82-adc6-17f5209a930d
+Da Works Pie	Pepperoni, green peppers, onions, olives, mushrooms, sausage and Roma tomatoes. Take our advice, ask for it crispy!	13.79	e09e9347-3578-5dc6-b1fa-2d074ad52d1c
+Garlic Cheese Knots	Freshly baked with bubbly, melted golden mozzarella and brushed with garlic, sesame and Romano cheese. Served with marinara sauce.	6.89	3cbe1858-9fc0-5531-9acd-d23a602f2595
+Broadway Bruschetta	Chopped tomatoes, fresh basil, red onions, fresh garlic and olive oil. Served with crustettes and topped with shaved asiago cheese.	6.31	9289fdc3-bcb7-50d4-93bc-1c2dea7b6960
+Crispy Zucchini	Fresh zucchini slices tossed in panko, garnished with romano cheese and seasonings, and served with marinara or ranch dressing.	6.89	09490203-741d-5366-820e-eb122124ff90
+Garlic Knots	Freshly baked and brushed with garlic, sesame and Romano cheese. Served with marinara sauce.	5.74	e906b2d5-1cae-59d2-9d0c-302c0b44858c
+Side of Alfredo		2.29	0750ca0a-a13a-5f30-83c6-6fe203eca2c6
+Crispy Fresh Mozzarella	Fresh mozzarella hand dipped in panko and lightly fried to golden brown perfection. Served with a side of marinara sauce and a fresh basil balsamic reduction.	10.91	af6d6957-a663-5301-bf30-f445dfbf6f00
+French Fries	A delicious serving of crispy fries, lightly seasoned with salt & pepper.ÿ	4.59	24edf384-8e6f-5b68-8e5d-a2ada84fdee2
+Boneless Wings		8.04	d41290a4-5e86-5684-b81f-082dea7b80c8
+Traditional Wings		9.76	f1a8d9bc-01cc-5e56-bc8c-f2f5be62f694
+Chelsea Chopped	Mixed chopped greens, Gorgonzola cheese, sun dried tomatoes, sliced almonds, bacon, cucumbers and NYPD's own blend of its house and ranch dressings.	10.34	c10e1624-9360-53be-ad01-07b82e78727b
+Tossed Antipasto	Salami, capicola ham, provolone, marinated mushrooms, artichokes, mild peppers, red peppers, onions, olives, and lettuce tossed with house dressing.	10.34	48d152bb-fcc9-5e69-a76e-a18cb163278d
+Soho Salad pizza	Served on a "pizza crisp" topped with mixed baby greens, bruschetta, almonds and feta with NYPD's own blend of its house and ranch dressings.	10.34	457bd428-0b1b-58b5-adeb-97eb59cc4ff4
+House Salad	Mixed greens topped with tomatoes, cucumbers and homemade croutons.	7.46	48dd21fd-1e20-57f2-ac20-c1ee4863d764
+Caesar Salad	Fresh romaine, homemade croutons and Romano, tossed in creamy Caesar dressing and topped with asiago cheese.	7.46	eeef4e20-148e-5d31-9773-1338948216be
+Chicken Caesar Salad		9.76	3fa7ea27-47d2-5fdd-9a88-829b6ebdeabe
+Greek salad	Mixed greens topped with feta, red onions, kalamata olives, green peppers, pepperoncini, cucumbers and tomatoes tossed with house dressing.	9.19	1f13175a-d52e-5898-8606-8f5f28c51b46
+Spinach Salad	Fresh spinach, bacon, red onion, mushrooms, sliced almonds and smoked mozzarella tossed with NYPD's own blend of house and ranch dressings.	9.19	940bbd49-9604-5a57-8f55-0d12d6690dfd
+Crispy Chicken Spinach	Crispy sliced chicken and smoked mozzarella tops our classic Spinach Salad tossed with NYPD's own blend of its house and ranch dressings.	11.49	68db1ab7-3164-56fc-9dd9-971ceb470ab1
+Buffalo Chicken Caesar	Crispy sliced chicken tossed in a mild buffalo sauce over a traditional Caesar complemented with Gorgonzola & asiago cheeses.	10.34	d1e8e947-781b-55dc-adb5-bda6941afd37
+Seasonal Salad	Ask for this season's selection.	8.61	d42a1ae0-be42-5712-8601-25083710a219
+Create Your Own Pizza 8"		10.34	86ee80c5-8359-5058-ac2d-c199325e04cb
+Create Your Own Pizza 14"		18.39	ada4899d-1521-5b82-adc6-17f5209a930d
+Create Your Own Pizza 16"		22.99	9da4a0e4-2734-5ec4-bb75-e9a75e3d435f
+Create Your Own Pizza 18"		25.29	abbbbcc3-34f6-58b1-804a-7658572807d0
+Brooklyn Pie	Pepperoni, sausage and fresh basil - our pie of choice.	12.64	f7256940-90b0-5bb9-b513-a8d559432cc9
+Kahuna Pie	Ham, pineapple and fresh basil. Hana hou!	12.64	1f9b8cf8-249a-5f3e-98b7-72fb2d354887
+Pizza Blanca Pie	Olive oil, crushed garlic, ricotta and mozzarella with your choice of fresh spinach or Roma tomatoes.	12.06	94c62829-9885-5afe-92fb-23f04b38e9b8
+Pizza Bruschetta Pie	This white pie features olive oil, crushed garlic, ricotta, mozzarella, asiago, fresh basil and our homemade bruschetta.	12.06	5d2df51a-a51c-528b-a65d-1c05344f2909
+Frans Favorite Pie	Roma tomatoes, mushrooms and fresh basil. Take our advice, ask for it crispy!	12.06	22bb7577-d851-5fea-9b58-2c90de673bc3
+Joey's Favorite Pie	Mushrooms, onions, peppers, olives and Roma tomatoes.Take our advice, ask for it crispy!	12.06	1c6ffb69-406b-5cab-9348-664f165abad7
+BBQ Chicken Pie	Barbecue sauce, smoked mozzarella, chicken, sliced red onions and resh cilantro baked NY style.	12.64	73a3c86c-ad8d-51a4-be0f-c9fe88ab584b
+Margherita Pie	Fresh mozzarella, fresh basil, sliced Roma tomatoes and our homemade pizza sauce. Take our advice, ask for it crispy!	12.64	85714eb0-8d86-56a2-9061-c9c23f645ff1
+Pesto Pie	Pesto topped with mozzarella and sliced Roma tomatoes.	12.06	c0ec0b30-ce61-50d4-9224-67b11b3d2e11
+Pesto Chicken Pie	Pesto topped with sliced chicken breast, pesto and mozzarella.	12.64	f9f84eb4-c7e9-5f95-ba4b-20f8cc2075fd
+Mott Street Pie	Pepperoni, sausage, meatballs - a taste that takes you right to Little Italy.	12.64	161fc9fe-2f95-5f0e-88cc-3cd511164b26
+Da Works Pie	Pepperoni, green peppers, onions, olives, mushrooms, sausage and Roma tomatoes. Take our advice, ask for it crispy!	13.79	e09e9347-3578-5dc6-b1fa-2d074ad52d1c
+Wall Street Pie	Pepperoni, sausage, bacon and mushrooms.	12.64	ae0d1735-6ccd-5297-8ebf-b2e09366bcbd
+Buffalo Chicken Pie	Grilled chicken breast smothered in tangy upstate-style buffalo sauce, celery, gorgonzola and smoked mozzarella.	12.64	f9395813-25be-54ca-bdf8-806234fb18a2
+Vinny's Pie	Any five toppings. Vinny always liked something a little different	13.79	bb4ff1b8-869f-5d10-87f8-647522bf533d
+Quattro Formaggi Pie	Smoked mozzarella, asiago, and fresh and shredded mozzarellas. Take our advice, ask for it crispy!	12.64	e698c776-0111-5098-9997-60cc19a48bb2
+Veganizza Pie	Our famous NYPD pizza topped with Daiya (vegan cheese), Roma tomatoes, fresh spinach, basil and garlic.	12.64	0f5f1177-9fa2-51b9-89b0-a03aacc20e8d
+Gluten Free 12" Cheese Pie		18.39	3b2e5ec9-0680-56b5-aff8-96a1d241d3f1
+Penne Ala Vodka	Sausage, onions and peppers sauteed in a creamy marinara sauce, tossed with penne pasta, basil, red peppers and asiago. Served with garlic knots.	18.39	e9bc1802-5c8d-58df-84b1-45f0d11193dc
+Ziti	Oven baked penne pasta, marinara, ricotta and melted mozzarella. Topped with parsely, oregano & Romano and served with freshly baked garlic knots.	15.51	fc03bd9b-8d84-5ad4-a42c-746c2c6b9171
+Spaghetti with Meatballs	Traditional confort food you'll really love! Topped with parsley, oregano & Romano and served with freshly baked garlic knots.	15.51	c4e006e5-851a-590f-b36c-27b2bb893a4a
+Chicken Parmesan	Breaded chicken breasts smothered in marinara and melted mozzarella. Served with spaghetti and freshly baked garlic knots.	18.39	eeb7e9a4-feb9-5afa-b9f6-47d27aec274e
+Lasagna	Layers of Italian sausage, sliced meatballs, ricotta and mozzarella cheese. Topped with parsley, oregano & Romano and served with garlic knots.	16.66	0d61c524-33ac-5497-a538-6dd05eec082d
+Pasta of Your Choice	Penne or spaghetti with olive oil, marinara or alfredo sauce. Topped with parsley, oregano & Romano and served with garlic knots.	12.06	11fac108-a185-599a-a13e-cb1575feedbf
+Side of Meatballs	Two huge, homemade meatballs served in marinara sauce.	4.01	b341cf64-3612-53dd-bc77-1beeefff447c
+Traditional Cheese	A cheesy combination of seasoned ricotta and mozzarella wrapped in pizza dough and served with marinara sauce on the side.\n\nNote** This is only a cheese calzone.  If you would like toppings, please order a Frank Sinatra and choose your topping(s) accordingly!	8.61	5d96d878-8b06-5011-92ba-4f01767a4145
+Frank Sinatra	A Cheese Calzone wtih your choice of up to three toppings. Served with marinara sauce on the side. * Note: Bacon, Chicken and Fresh Mozzarella count as double toppings.	10.91	60f57110-689d-50af-9016-8c1e13d5d62a
+Al Capone	Sausage, pepperoni and onions combined with seasoned ricotta and mozzarella cheese. Served with marinara sauce on the side.	10.91	ec26731f-68dd-5204-9c9f-accc136d1319
+Cookie and Cream	Choice of freshly baked Chocolate Chip, Oatmeal Raisin or Chocolate Peanut Butter cookie topped with vanilla bean ice cream, and your choice of sauce.	8.61	b512ed6a-13d5-5b33-bb74-0b51074aab99
+Zeppolis	Nuggets of pizza dough fried and tossed in powdered sugar. Served with chocolate and raspberry sauces.	8.61	4e29092a-62f0-5628-bf57-f9f048742215
+Zeppolis Sundae	Nuggets fo pizza dough fried and tossed with cinnamon sugar. Topped with vanilla ice cream, whipped cream, chocolate sauce and a cherry	9.19	2190bc45-7802-5a44-b7c3-1c0c9d98bb17
+Limoncello	A slice of spongy, sweet lemon cake, layered with mascarpone and covered with creamy icing	8.04	9e657b90-cd34-5b7e-a2fc-0190a83fd23e
+New York Cheesecake		8.04	c0491dc2-3f3d-5b43-86da-52f385ef1712
+Pepsi		4.01	6b077fed-2f67-592a-95dc-de8ccf3f4649
+Diet Pepsi		4.01	85997463-8ca1-5273-9221-160340c487ca
+Sierra Mist		4.01	9b815875-d25b-5d0f-bdcc-1511477397b2
+Orange Crush		4.01	98776c0f-0ec9-5fbc-99a1-96936fe3f10f
+Gyoza Dumplings (4 pcs)	Served with a soy-based sauce.	4.29	64f338a3-5454-4bfe-9605-01a9095be25d
+Teriyaki Chicken	Chargrilled chicken with teriyaki sauce. Bowl served over rice.	8.99	2f2c33c2-c01b-432f-8076-4bb2692bad85
+Miso Soup (22 oz)	Wakame seaweed with tofu in a soothing soybean-based broth.	3.99	89219444-89e0-4f64-b447-477ddf0f3c5d
+Panko Chicken	Chicken breaded in Japanese panko crumbs and fried. Bowl served over rice.	9.99	61e33e5c-345b-404f-9505-21871546e4da
+Crab Puffs (3 pcs)	Crab and cream cheese fried in a crispy wonton wrapper. Served with blue fins orange sauce.	4.29	b491aed9-a8b6-4939-9120-14125d833947
+Edamame	Healthy steamed soybean pods. Vegetarian.	4.29	77428671-89ac-455d-a043-4a07cf33de45
+Gyoza Dumplings (4 pcs)	Served with a soy-based sauce.	4.29	64f338a3-5454-4bfe-9605-01a9095be25d
+Crab Puffs (3 pcs)	Crab and cream cheese fried in a crispy wonton wrapper. Served with blue fins orange sauce.	4.29	b491aed9-a8b6-4939-9120-14125d833947
+Tempura Shrimp (2 pcs)	Light and Japanese batter surrounding shrimp with a light soy-based sauce.	4.29	b6d2f244-f16b-41bf-81ec-d6b7a183b7e7
+Mini Spring Rolls (3 pcs)	3 to an order.	2.49	897a0820-2b5f-4fc8-b516-2aed4714eb64
+Chicken Egg Roll (single)	Egg roll filled with minced chicken and vegetables, served with house made sweet and sour sauce	2.49	ddbf0b60-aae7-4a39-b2c3-8f73fa0251da
+Vegetable Egg Roll (single)	Fried egg roll filled with mixed vegetables, served with house made sweet and sour	2.49	4b33da34-53ee-4336-9363-63f4d84cb478
+Sunomono Cucumber Salad (4 oz)	Thinly sliced cucumbers in a refreshing marinade. Salad sprinkled with sesame seeds. Vegetarian.	2.79	dac34536-ef4e-4884-8a75-8280b8cd4a3f
+Seaweed Salad (4 oz)	Crunchy assorted seaweed with sesame seeds and chili powder. Salad sprinkled with sesame seeds. Vegetarian.	3.29	798f81b6-2dcb-4f8c-a651-0f66715387b1
+Side Green Salad	Lettuce with carrots and red cabbage. Served with dressing. Salad sprinkled with sesame seeds. Vegetarian.	2.79	f6883009-33f3-4f04-969a-61dd9655b38c
+Tofu Salad with Avocado	Tofu and fresh avocado served on top of lettuce with carrots and red cabbage. Served with dressing. Salad sprinkled with sesame seeds. Vegetarian.	8.99	fa7e3559-9e82-4adf-b64a-028659b07413
+Char-Grilled Chicken Salad	Sliced char-grilled white chicken (cold). Served on top of lettuce with carrots and red cabbage. Salad sprinkled with sesame seeds. Served with dressing.	8.99	b961825b-9366-44f7-88f3-2be155a64464
+Crab Salad with Avocado	Crab and fresh avocado. Served on top of lettuce with carrots and red cabbage. Salad sprinkled with sesame seeds. Served with dressing.	9.59	eb5bb2cb-b3dd-490c-8c10-d7317b970a0c
+Miso Soup (22 oz)	Wakame seaweed with tofu in a soothing soybean-based broth.	3.99	89219444-89e0-4f64-b447-477ddf0f3c5d
+Teriyaki Chicken	Chargrilled chicken with teriyaki sauce. Bowl served over rice.	8.99	2f2c33c2-c01b-432f-8076-4bb2692bad85
+Panko Chicken	Chicken breaded in Japanese panko crumbs and fried. Bowl served over rice.	9.99	61e33e5c-345b-404f-9505-21871546e4da
+Vegetable Teriyaki Chicken	Teriyaki chicken with broccoli, zucchini, carrots, cabbage, and celery. Bowl served over rice.	9.79	77c20247-c788-41d6-a467-f8c570e33857
+Sweet and Sour Chicken	Breaded and fried chicken. Served with carrots and onions. Bowl served over rice.	9.49	4d948293-be39-49f8-901b-7cc2c8f3ae6d
+Japanese Chicken Curry	Mild curry sauce with carrots and onions. Bowl served over rice.	9.49	09cf976b-2d61-47a9-bfa7-4a2622a47702
+Oyako Chicken	Grilled breast meat chicken steamed with eggs in a special sweet sauce. Bowl served over rice.	10.19	e695e86c-cceb-4ef3-97bb-c1fa320a09d0
+Chicken Fried Rice	Fried rice with chicken, carrots, corn, peas, lima beans, and green onions.	8.99	7395e362-e13a-4af9-8f03-52ac0d0d799d
+Teriyaki Beef	Thinly cut strips of beef with teriyaki sauce and napa cabbage. Bowl served over rice.	9.29	13d2ecfb-7380-40d9-8088-7790147b94f6
+Vegetable Teriyaki Beef	Teriyaki beef with broccoli, zucchini, carrots, cabbage, and celery. Bowl served over rice.	9.99	4b2b1b9c-6509-44bf-a6f8-cf6db2aa4dc1
+Katsu Pork	Breaded pork cutlet with steamed eggs. Bowl served over rice.	10.19	d7ac6e63-f37e-4e27-926f-f0f9fec4717a
+Vegetable Bowl	Broccoli, zucchini, carrots, and cabbage are served over rice.	8.59	6170ef74-9d6b-4207-8f67-f388936c8f50
+Japanese Vegetable Curry	Japanese yellow curry with assorted vegetables. Bowl served over rice.	9.29	81681e10-f145-45b7-8aa2-92850300b826
+Vegetable yakisoba	Wheat noodles with steamed broccoli, cabbage, carrots, & zucchini.  Served with teriyaki sauce on the side.	10.09	87c94adb-ac39-4d3d-8ede-8ac0efff108f
+Panko Fish	Delicate white fish breaded in Japanese panko crumbs and fried. Served over rice.	10.59	2ec552a6-c607-4010-bbe2-4887363e38ea
+Coconut Shrimp	8 pieces of butterflied shrimp and coated with coconut crumbs. Served with orange sauce. Served over rice.	11.59	29c14dee-a12d-4b29-a32a-bce096e74ab8
+Teriyaki Salmon & Vegetables	Wild-caught, grilled salmon over broccoli, cabbage, carrots, zucchini, and white rice.	12.99	bfa1d705-e785-4bfa-bc5c-be35f9f73e71
+Steamed Vegetables (8 oz)	Broccoli, carrots, cabbage, celery, and onions. Vegetarian.	4.49	b4deba42-a6fa-4bcf-9d6f-79eb3f2d9fd2
+Steamed White Rice (22 oz)	Sprinkled with sesame seeds. Vegetarian.	2.99	6617eb5b-4a34-4fa3-9893-ee81a2bfc175
+Steamed Brown Rice (22 oz)	Sprinkled with sesame seeds. Vegetarian.	3.49	df7f628e-62a5-4cbd-abd5-61ed57a70a60
+Mochi	Sticky rice with sweet red bean paste.	3.99	2a5e37b2-88f3-49b9-9a9d-6b5e4def1709
+Almond Cookies (2 pcs)	Individually wrapped.	1	d36563c3-840f-4e9a-8856-f8243d996c43
+Fountain Soda (32 oz)		2.99	554e780f-4da6-452a-830d-c9f49d1e58ad
+Fresh Brewed Old Fashioned Iced Tea (32 oz)		2.79	43a39d9b-335d-411e-b830-4cf5832bd7d2
+Iced Green Tea (32 oz)		2.79	9f2875f5-9e6d-4873-8392-de3efb9755c3
+Lemonade (32 oz)		2.79	20c9ba88-036a-4acd-a339-ad3d1a028fc4
+Bottled Spring Water		1.59	cc7a9717-4ce6-4e9d-b181-1c10be64bac9
+Aloha Fruit Drinks		2.49	e2a7eefc-6c1c-458a-b356-1a1bcd2bcbf1
 Margherita	tomato sauce, mozzarella, parmigiano, basil	15.95	f213fe70-d86a-5938-8060-4911a7379b8b
 Strozzapreti Salsiccia	sausage, tomato sauce, cream, parmigiano, rosemary. Handcrafted in-house daily with imported italian semolina flour. Contains eggs (locally farmed).	18.95	418150eb-c5d6-59ec-a105-0589d14fa82a
 Polpette/ Meatballs	creek stone beef, pork, parmigiano, tomato sauce.	14.95	4bc4a457-f3b1-54c0-91f2-fe95f713d7f1
@@ -651,6 +856,37 @@ Dr. Pepper	Dr. Pepper	3.11	a41f08d0-a0c8-5ff4-b38b-9d564ee55fa6
 --
 
 COPY public."MenuSection" ("menuSectionName", "menuSectionDescription", "menuSectionId") FROM stdin;
+Picked for you	\N	7e12b8f3-4d07-51f8-a8ba-83c72b7a5065
+Appetizers	\N	4076cdc7-930f-55d8-9718-f48ccc3c8467
+Steaks & Ribs	\N	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+Picked for you	\N	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+Entrees	\N	c3444e60-c80e-56ce-be96-0c291f9574f1
+Lifestyle Bowls	\N	5c328212-ec4f-5530-b0e7-fde2869ed21e
+Sides	\N	c6ef2787-cde9-5737-a46d-0677999ba2a6
+Drinks	\N	2e0967b3-1156-53d9-98bb-74740976298f
+Picked for you	\N	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+Tamales	Celebrate the holiday season with our Tamales. Filled with seasoned shredded pork, fire roasted salsa, stone ground corn masa and individually hand wrapped the authentic way with real corn husk. Single, 2 Pack and 4 Pack. \n\nAvailable for a limited time only, 10AM - 10PM. 	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+20 Under $2 Menu	\N	08b50231-ca3e-5375-90a0-a773756fd38d
+Picked for you	\N	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+Appetizers	\N	6e200ded-02c9-52ea-a752-40ddd32ebd98
+Wings	\N	2e873fd8-6069-5677-87ae-4c31d883c4b4
+Salad	\N	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+Pizzas	\N	8b43958a-e83f-574f-9c87-b826578cf69a
+Specialty Pies	\N	78cc1ec8-d147-5962-86f2-b1966d1566a8
+Pasta and Entree	\N	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+Calzones	\N	4f5927c8-45ce-5374-94fb-bcdaabe1bceb
+Desserts	\N	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+Beverages	\N	8bfb7427-ebfe-5995-8fb6-c8b968169675
+Picked for you	\N	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+Appetizers	\N	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+Salad and Soup	\N	6d352052-14d8-43ee-b887-d7e9df9f33f0
+Chicken Dishes	\N	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+Beef and Pork Dishes	\N	dd954a97-bcbc-437e-aef2-67f306f99fbf
+Vegetarian Dishes	\N	e899c9dc-3ba2-4b19-8830-073301b3ed14
+Seafood	\N	df33942b-bdf4-4c23-8c1b-147478681049
+Side Orders	\N	738fdb6b-b44b-4eb3-a9b6-eae69a7f12c8
+Desserts	\N	2ec82d7b-42c8-4eed-9d6c-9d9e8bce02b8
+Beverages	\N	333f20d9-2b48-423c-a3ae-b614f7d27324
 Picked for you	\N	7e12b8f3-ef3a-5542-bb59-369d94639384
 Pizza Napoletana	\N	29725af3-ad60-5be0-b04f-8c7a0f9e59d6
 Homemade Pasta	Hand crafted Recipes & ingredients imported straight from Italy!	2875ba32-cca3-54bb-a645-a4e3fd9f1047
@@ -709,6 +945,205 @@ Beverages	\N	e2670054-a26a-5515-8db1-6a9aaf799fe4
 --
 
 COPY public."MenuSectionToMenuItem" ("menuItemId", "menuSectionId") FROM stdin;
+96fd41ee-7043-5a28-8cb3-67a8fefbbcea	7e12b8f3-4d07-51f8-a8ba-83c72b7a5065
+1228fed5-994c-5f41-a02b-747293447628	7e12b8f3-4d07-51f8-a8ba-83c72b7a5065
+7dd8a66c-1b24-59e7-981c-9d6db7158c0b	7e12b8f3-4d07-51f8-a8ba-83c72b7a5065
+650b84bb-6a28-576f-8606-198ffd55aa23	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+0960fea5-4194-5125-a357-3257ed6bbf2b	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+ab565305-0fd9-5df0-9e14-75fe382a7d22	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+5f3617a1-eff9-5338-a1f2-1ae6e95c85c1	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+97debfc7-9793-540a-a39b-40420d364e0e	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+7a888c46-730f-54c8-8972-860e995843d5	4076cdc7-930f-55d8-9718-f48ccc3c8467
+0c8145c2-ff6a-5ddc-8838-d05bc4f9de13	4076cdc7-930f-55d8-9718-f48ccc3c8467
+3c0961c5-6311-5255-a683-76e85f9aedcd	4076cdc7-930f-55d8-9718-f48ccc3c8467
+303e9e8a-8abc-5d02-8033-5e24eb381a42	4076cdc7-930f-55d8-9718-f48ccc3c8467
+5c2a19fa-0904-5047-850c-f17ce909ba67	4076cdc7-930f-55d8-9718-f48ccc3c8467
+ce1e1e75-c7b9-50a9-b3e0-b613a7325cc0	4076cdc7-930f-55d8-9718-f48ccc3c8467
+45ef74ca-36b7-591b-9d47-c054f90d8fac	4076cdc7-930f-55d8-9718-f48ccc3c8467
+f57f4bbb-9258-54ad-97d6-273f0b5896d7	4076cdc7-930f-55d8-9718-f48ccc3c8467
+15f742c6-bc48-553b-9a1f-4b4ec1162808	4076cdc7-930f-55d8-9718-f48ccc3c8467
+69485b69-1468-5c87-92d6-bff5a4c9dd18	4076cdc7-930f-55d8-9718-f48ccc3c8467
+1d3ae392-e192-5009-a0ce-183efffbf59d	4076cdc7-930f-55d8-9718-f48ccc3c8467
+683da624-dd3f-54c8-9c65-12c073ad50f9	4076cdc7-930f-55d8-9718-f48ccc3c8467
+7eb1d279-3e7c-5c06-9035-528934088f3b	4076cdc7-930f-55d8-9718-f48ccc3c8467
+ffe160e0-722a-5453-865f-dc9818406e6e	4076cdc7-930f-55d8-9718-f48ccc3c8467
+c2b601e4-a492-5be2-a37d-982feded1fd9	4076cdc7-930f-55d8-9718-f48ccc3c8467
+a37c4db0-6daa-5a7b-b3e4-cbcf7262342d	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+89e2664f-16c0-542e-8fbb-a1eb9fe6370c	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+7599a26f-a270-5704-a45a-d699f1463c6e	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+bdbcae4c-f8a4-5a4b-82e0-180251f74449	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+92e1a1e4-f085-5ddf-a7d7-66fa0be9bf8d	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+3021827c-2546-50bd-b18b-8ced206d484e	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+00e01911-ab3f-5dc1-a9e8-87e8c4d7dc64	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+d7894be9-fffd-5a92-8bdc-d9c21d7d2d87	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+cd5ba78e-58a0-53a2-82e4-a70ce1beb832	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+19110b3b-1c26-5e5b-9de7-002e97878598	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+0919f3c8-3390-54a5-8e70-a00d9c5be545	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+3a03a7d0-9eaf-5b1e-a6be-1a1dff89216e	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+cd5ba78e-58a0-53a2-82e4-a70ce1beb832	c3444e60-c80e-56ce-be96-0c291f9574f1
+d7894be9-fffd-5a92-8bdc-d9c21d7d2d87	c3444e60-c80e-56ce-be96-0c291f9574f1
+0919f3c8-3390-54a5-8e70-a00d9c5be545	c3444e60-c80e-56ce-be96-0c291f9574f1
+4be675c9-1c20-5937-8d4c-fa4611b1176f	c3444e60-c80e-56ce-be96-0c291f9574f1
+b890dc6c-b776-5d45-855c-bdb9f25bb042	c3444e60-c80e-56ce-be96-0c291f9574f1
+05ed8bf3-3d4d-57ad-8b09-95bcefe25fee	c3444e60-c80e-56ce-be96-0c291f9574f1
+b5200025-040a-556e-a0da-3ff5b8af65c8	c3444e60-c80e-56ce-be96-0c291f9574f1
+460e92b0-3022-5e9b-a92d-ae753759a525	c3444e60-c80e-56ce-be96-0c291f9574f1
+8a297e9e-9d43-51a4-b5d1-4ec78a233e36	5c328212-ec4f-5530-b0e7-fde2869ed21e
+409e3681-3290-5ff1-8f92-fdc0df9a00ee	5c328212-ec4f-5530-b0e7-fde2869ed21e
+cdb672ca-e291-55e0-a5fe-29db9786733c	5c328212-ec4f-5530-b0e7-fde2869ed21e
+073e9fe3-cbc9-5228-bd9e-ca86483bdbdb	5c328212-ec4f-5530-b0e7-fde2869ed21e
+4c4cb3c7-ab6e-5844-9e7a-485fcce8f7cf	5c328212-ec4f-5530-b0e7-fde2869ed21e
+5d99668e-516a-5473-97b6-99735f991add	5c328212-ec4f-5530-b0e7-fde2869ed21e
+9c2c0624-d6ca-5816-b598-4497e12d7b23	5c328212-ec4f-5530-b0e7-fde2869ed21e
+201e044c-9b73-54be-8d81-8f6be0786597	5c328212-ec4f-5530-b0e7-fde2869ed21e
+75f7f91a-54f0-5f3d-a20b-971c29ba4d35	5c328212-ec4f-5530-b0e7-fde2869ed21e
+cc4e28fc-8757-587a-b5ae-2b058b44a8ba	c6ef2787-cde9-5737-a46d-0677999ba2a6
+19110b3b-1c26-5e5b-9de7-002e97878598	c6ef2787-cde9-5737-a46d-0677999ba2a6
+8bdcef92-0221-50d2-a9ba-880c8a3d5edc	c6ef2787-cde9-5737-a46d-0677999ba2a6
+55fa1a5e-5261-5049-84d9-18d133075e0e	c6ef2787-cde9-5737-a46d-0677999ba2a6
+075501b2-6a74-5b9f-b90a-abf3e1120838	c6ef2787-cde9-5737-a46d-0677999ba2a6
+3a03a7d0-9eaf-5b1e-a6be-1a1dff89216e	c6ef2787-cde9-5737-a46d-0677999ba2a6
+d776de59-3055-5d9e-920b-1eb5c6117fa5	c6ef2787-cde9-5737-a46d-0677999ba2a6
+01e5163e-b28d-583b-814c-71f52a060588	c6ef2787-cde9-5737-a46d-0677999ba2a6
+020be16c-691f-5222-b3a2-cdc7bcccbc19	c6ef2787-cde9-5737-a46d-0677999ba2a6
+9c4c62d5-8316-5362-a942-75d298c99f0a	c6ef2787-cde9-5737-a46d-0677999ba2a6
+d80bc78c-383b-5b2a-b7d5-7ddef6a743cb	c6ef2787-cde9-5737-a46d-0677999ba2a6
+2181a2b2-3155-5f0f-a239-72370e388f79	c6ef2787-cde9-5737-a46d-0677999ba2a6
+21183932-be85-5360-af6f-0bfb673fada9	c6ef2787-cde9-5737-a46d-0677999ba2a6
+f56b1133-d90c-552b-b280-5837cff99c9e	c6ef2787-cde9-5737-a46d-0677999ba2a6
+5c26a2fc-f08b-58a2-b0f2-0a56735a7419	2e0967b3-1156-53d9-98bb-74740976298f
+9ec857e3-4a0e-5b3b-bdcd-1416ce3946ff	2e0967b3-1156-53d9-98bb-74740976298f
+ae347c2d-fb4e-50da-bbe1-78c986e0ee9a	2e0967b3-1156-53d9-98bb-74740976298f
+6cd93ae7-81f3-58e6-8262-6bc74b362796	2e0967b3-1156-53d9-98bb-74740976298f
+70761a7c-f6f4-56fa-8bcf-e6092cb8a9b6	2e0967b3-1156-53d9-98bb-74740976298f
+446eb5b7-bdee-5121-8d9d-21ff8a2662c8	2e0967b3-1156-53d9-98bb-74740976298f
+79ae1c72-032f-5a58-b18c-9223678c61f9	2e0967b3-1156-53d9-98bb-74740976298f
+bb86e174-eb6b-57a3-a7e2-66e104e44d8f	2e0967b3-1156-53d9-98bb-74740976298f
+f27ac13f-6fb3-5c1d-afe3-95c4fa765b65	2e0967b3-1156-53d9-98bb-74740976298f
+1075e2dc-3a7a-50ad-b156-026697e03e0d	2e0967b3-1156-53d9-98bb-74740976298f
+92a5105d-3ef5-5b2f-b842-f73e12763807	2e0967b3-1156-53d9-98bb-74740976298f
+ab8e0744-bc7a-5f60-a744-be5e3d8920fe	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+a1fa6f62-468c-5374-bfa1-0c185d753825	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+b22a2a3d-9912-57b3-9c76-3c1e25640798	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+dd30a961-46e1-58e7-87ed-4f08b2b73947	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+e5d9c02e-cb91-5d77-88e3-1cacb5305910	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+e333cdca-dc0c-57bc-a62b-0ae984f17c67	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+39b29693-29d6-5c35-8fa6-28435b8f236b	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+aa14d523-2b8e-5fa4-b68d-3aef3323197e	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+18ad47a3-0e94-54de-a4f3-0163add03b81	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+123c694c-9813-5c46-bb06-97c4e1e22a54	08b50231-ca3e-5375-90a0-a773756fd38d
+f7256940-90b0-5bb9-b513-a8d559432cc9	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+f1a8d9bc-01cc-5e56-bc8c-f2f5be62f694	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+abbbbcc3-34f6-58b1-804a-7658572807d0	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+ada4899d-1521-5b82-adc6-17f5209a930d	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+e09e9347-3578-5dc6-b1fa-2d074ad52d1c	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+3cbe1858-9fc0-5531-9acd-d23a602f2595	6e200ded-02c9-52ea-a752-40ddd32ebd98
+9289fdc3-bcb7-50d4-93bc-1c2dea7b6960	6e200ded-02c9-52ea-a752-40ddd32ebd98
+09490203-741d-5366-820e-eb122124ff90	6e200ded-02c9-52ea-a752-40ddd32ebd98
+e906b2d5-1cae-59d2-9d0c-302c0b44858c	6e200ded-02c9-52ea-a752-40ddd32ebd98
+0750ca0a-a13a-5f30-83c6-6fe203eca2c6	6e200ded-02c9-52ea-a752-40ddd32ebd98
+af6d6957-a663-5301-bf30-f445dfbf6f00	6e200ded-02c9-52ea-a752-40ddd32ebd98
+24edf384-8e6f-5b68-8e5d-a2ada84fdee2	6e200ded-02c9-52ea-a752-40ddd32ebd98
+d41290a4-5e86-5684-b81f-082dea7b80c8	2e873fd8-6069-5677-87ae-4c31d883c4b4
+f1a8d9bc-01cc-5e56-bc8c-f2f5be62f694	2e873fd8-6069-5677-87ae-4c31d883c4b4
+c10e1624-9360-53be-ad01-07b82e78727b	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+48d152bb-fcc9-5e69-a76e-a18cb163278d	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+457bd428-0b1b-58b5-adeb-97eb59cc4ff4	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+48dd21fd-1e20-57f2-ac20-c1ee4863d764	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+eeef4e20-148e-5d31-9773-1338948216be	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+3fa7ea27-47d2-5fdd-9a88-829b6ebdeabe	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+1f13175a-d52e-5898-8606-8f5f28c51b46	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+940bbd49-9604-5a57-8f55-0d12d6690dfd	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+68db1ab7-3164-56fc-9dd9-971ceb470ab1	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+d1e8e947-781b-55dc-adb5-bda6941afd37	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+d42a1ae0-be42-5712-8601-25083710a219	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+86ee80c5-8359-5058-ac2d-c199325e04cb	8b43958a-e83f-574f-9c87-b826578cf69a
+ada4899d-1521-5b82-adc6-17f5209a930d	8b43958a-e83f-574f-9c87-b826578cf69a
+9da4a0e4-2734-5ec4-bb75-e9a75e3d435f	8b43958a-e83f-574f-9c87-b826578cf69a
+abbbbcc3-34f6-58b1-804a-7658572807d0	8b43958a-e83f-574f-9c87-b826578cf69a
+f7256940-90b0-5bb9-b513-a8d559432cc9	78cc1ec8-d147-5962-86f2-b1966d1566a8
+1f9b8cf8-249a-5f3e-98b7-72fb2d354887	78cc1ec8-d147-5962-86f2-b1966d1566a8
+94c62829-9885-5afe-92fb-23f04b38e9b8	78cc1ec8-d147-5962-86f2-b1966d1566a8
+5d2df51a-a51c-528b-a65d-1c05344f2909	78cc1ec8-d147-5962-86f2-b1966d1566a8
+22bb7577-d851-5fea-9b58-2c90de673bc3	78cc1ec8-d147-5962-86f2-b1966d1566a8
+1c6ffb69-406b-5cab-9348-664f165abad7	78cc1ec8-d147-5962-86f2-b1966d1566a8
+73a3c86c-ad8d-51a4-be0f-c9fe88ab584b	78cc1ec8-d147-5962-86f2-b1966d1566a8
+85714eb0-8d86-56a2-9061-c9c23f645ff1	78cc1ec8-d147-5962-86f2-b1966d1566a8
+c0ec0b30-ce61-50d4-9224-67b11b3d2e11	78cc1ec8-d147-5962-86f2-b1966d1566a8
+f9f84eb4-c7e9-5f95-ba4b-20f8cc2075fd	78cc1ec8-d147-5962-86f2-b1966d1566a8
+161fc9fe-2f95-5f0e-88cc-3cd511164b26	78cc1ec8-d147-5962-86f2-b1966d1566a8
+e09e9347-3578-5dc6-b1fa-2d074ad52d1c	78cc1ec8-d147-5962-86f2-b1966d1566a8
+ae0d1735-6ccd-5297-8ebf-b2e09366bcbd	78cc1ec8-d147-5962-86f2-b1966d1566a8
+f9395813-25be-54ca-bdf8-806234fb18a2	78cc1ec8-d147-5962-86f2-b1966d1566a8
+bb4ff1b8-869f-5d10-87f8-647522bf533d	78cc1ec8-d147-5962-86f2-b1966d1566a8
+e698c776-0111-5098-9997-60cc19a48bb2	78cc1ec8-d147-5962-86f2-b1966d1566a8
+0f5f1177-9fa2-51b9-89b0-a03aacc20e8d	78cc1ec8-d147-5962-86f2-b1966d1566a8
+3b2e5ec9-0680-56b5-aff8-96a1d241d3f1	78cc1ec8-d147-5962-86f2-b1966d1566a8
+e9bc1802-5c8d-58df-84b1-45f0d11193dc	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+fc03bd9b-8d84-5ad4-a42c-746c2c6b9171	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+c4e006e5-851a-590f-b36c-27b2bb893a4a	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+eeb7e9a4-feb9-5afa-b9f6-47d27aec274e	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+0d61c524-33ac-5497-a538-6dd05eec082d	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+11fac108-a185-599a-a13e-cb1575feedbf	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+b341cf64-3612-53dd-bc77-1beeefff447c	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+5d96d878-8b06-5011-92ba-4f01767a4145	4f5927c8-45ce-5374-94fb-bcdaabe1bceb
+60f57110-689d-50af-9016-8c1e13d5d62a	4f5927c8-45ce-5374-94fb-bcdaabe1bceb
+ec26731f-68dd-5204-9c9f-accc136d1319	4f5927c8-45ce-5374-94fb-bcdaabe1bceb
+b512ed6a-13d5-5b33-bb74-0b51074aab99	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+4e29092a-62f0-5628-bf57-f9f048742215	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+2190bc45-7802-5a44-b7c3-1c0c9d98bb17	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+9e657b90-cd34-5b7e-a2fc-0190a83fd23e	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+c0491dc2-3f3d-5b43-86da-52f385ef1712	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+6b077fed-2f67-592a-95dc-de8ccf3f4649	8bfb7427-ebfe-5995-8fb6-c8b968169675
+85997463-8ca1-5273-9221-160340c487ca	8bfb7427-ebfe-5995-8fb6-c8b968169675
+9b815875-d25b-5d0f-bdcc-1511477397b2	8bfb7427-ebfe-5995-8fb6-c8b968169675
+98776c0f-0ec9-5fbc-99a1-96936fe3f10f	8bfb7427-ebfe-5995-8fb6-c8b968169675
+64f338a3-5454-4bfe-9605-01a9095be25d	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+2f2c33c2-c01b-432f-8076-4bb2692bad85	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+89219444-89e0-4f64-b447-477ddf0f3c5d	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+61e33e5c-345b-404f-9505-21871546e4da	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+b491aed9-a8b6-4939-9120-14125d833947	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+77428671-89ac-455d-a043-4a07cf33de45	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+64f338a3-5454-4bfe-9605-01a9095be25d	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+b491aed9-a8b6-4939-9120-14125d833947	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+b6d2f244-f16b-41bf-81ec-d6b7a183b7e7	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+897a0820-2b5f-4fc8-b516-2aed4714eb64	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+ddbf0b60-aae7-4a39-b2c3-8f73fa0251da	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+4b33da34-53ee-4336-9363-63f4d84cb478	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+dac34536-ef4e-4884-8a75-8280b8cd4a3f	6d352052-14d8-43ee-b887-d7e9df9f33f0
+798f81b6-2dcb-4f8c-a651-0f66715387b1	6d352052-14d8-43ee-b887-d7e9df9f33f0
+f6883009-33f3-4f04-969a-61dd9655b38c	6d352052-14d8-43ee-b887-d7e9df9f33f0
+fa7e3559-9e82-4adf-b64a-028659b07413	6d352052-14d8-43ee-b887-d7e9df9f33f0
+b961825b-9366-44f7-88f3-2be155a64464	6d352052-14d8-43ee-b887-d7e9df9f33f0
+eb5bb2cb-b3dd-490c-8c10-d7317b970a0c	6d352052-14d8-43ee-b887-d7e9df9f33f0
+89219444-89e0-4f64-b447-477ddf0f3c5d	6d352052-14d8-43ee-b887-d7e9df9f33f0
+2f2c33c2-c01b-432f-8076-4bb2692bad85	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+61e33e5c-345b-404f-9505-21871546e4da	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+77c20247-c788-41d6-a467-f8c570e33857	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+4d948293-be39-49f8-901b-7cc2c8f3ae6d	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+09cf976b-2d61-47a9-bfa7-4a2622a47702	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+e695e86c-cceb-4ef3-97bb-c1fa320a09d0	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+7395e362-e13a-4af9-8f03-52ac0d0d799d	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+13d2ecfb-7380-40d9-8088-7790147b94f6	dd954a97-bcbc-437e-aef2-67f306f99fbf
+4b2b1b9c-6509-44bf-a6f8-cf6db2aa4dc1	dd954a97-bcbc-437e-aef2-67f306f99fbf
+d7ac6e63-f37e-4e27-926f-f0f9fec4717a	dd954a97-bcbc-437e-aef2-67f306f99fbf
+6170ef74-9d6b-4207-8f67-f388936c8f50	e899c9dc-3ba2-4b19-8830-073301b3ed14
+81681e10-f145-45b7-8aa2-92850300b826	e899c9dc-3ba2-4b19-8830-073301b3ed14
+87c94adb-ac39-4d3d-8ede-8ac0efff108f	e899c9dc-3ba2-4b19-8830-073301b3ed14
+2ec552a6-c607-4010-bbe2-4887363e38ea	df33942b-bdf4-4c23-8c1b-147478681049
+29c14dee-a12d-4b29-a32a-bce096e74ab8	df33942b-bdf4-4c23-8c1b-147478681049
+bfa1d705-e785-4bfa-bc5c-be35f9f73e71	df33942b-bdf4-4c23-8c1b-147478681049
+b4deba42-a6fa-4bcf-9d6f-79eb3f2d9fd2	738fdb6b-b44b-4eb3-a9b6-eae69a7f12c8
+6617eb5b-4a34-4fa3-9893-ee81a2bfc175	738fdb6b-b44b-4eb3-a9b6-eae69a7f12c8
+df7f628e-62a5-4cbd-abd5-61ed57a70a60	738fdb6b-b44b-4eb3-a9b6-eae69a7f12c8
+2a5e37b2-88f3-49b9-9a9d-6b5e4def1709	2ec82d7b-42c8-4eed-9d6c-9d9e8bce02b8
+d36563c3-840f-4e9a-8856-f8243d996c43	2ec82d7b-42c8-4eed-9d6c-9d9e8bce02b8
+554e780f-4da6-452a-830d-c9f49d1e58ad	333f20d9-2b48-423c-a3ae-b614f7d27324
+43a39d9b-335d-411e-b830-4cf5832bd7d2	333f20d9-2b48-423c-a3ae-b614f7d27324
+9f2875f5-9e6d-4873-8392-de3efb9755c3	333f20d9-2b48-423c-a3ae-b614f7d27324
+20c9ba88-036a-4acd-a339-ad3d1a028fc4	333f20d9-2b48-423c-a3ae-b614f7d27324
+cc7a9717-4ce6-4e9d-b181-1c10be64bac9	333f20d9-2b48-423c-a3ae-b614f7d27324
+e2a7eefc-6c1c-458a-b356-1a1bcd2bcbf1	333f20d9-2b48-423c-a3ae-b614f7d27324
 f213fe70-d86a-5938-8060-4911a7379b8b	7e12b8f3-ef3a-5542-bb59-369d94639384
 418150eb-c5d6-59ec-a105-0589d14fa82a	7e12b8f3-ef3a-5542-bb59-369d94639384
 4bc4a457-f3b1-54c0-91f2-fe95f713d7f1	7e12b8f3-ef3a-5542-bb59-369d94639384
@@ -1154,6 +1589,38 @@ a41f08d0-a0c8-5ff4-b38b-9d564ee55fa6	e2670054-a26a-5515-8db1-6a9aaf799fe4
 --
 
 COPY public."MenuToMenuSection" ("menuId", "menuSectionId") FROM stdin;
+a47fc313-8938-5525-911c-e7917347c273	7e12b8f3-4d07-51f8-a8ba-83c72b7a5065
+a47fc313-8938-5525-911c-e7917347c273	151a1a2e-e93c-594d-845a-3f9620d9b3ac
+a47fc313-8938-5525-911c-e7917347c273	4076cdc7-930f-55d8-9718-f48ccc3c8467
+a47fc313-8938-5525-911c-e7917347c273	2bdf1cf4-f407-5bf8-beca-b692e57562a7
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	7e12b8f3-510f-5104-b07d-72bf4f7200ef
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	c3444e60-c80e-56ce-be96-0c291f9574f1
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	5c328212-ec4f-5530-b0e7-fde2869ed21e
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	c6ef2787-cde9-5737-a46d-0677999ba2a6
+2066f9bc-e9c3-5517-8b5e-260dcb54b4f7	2e0967b3-1156-53d9-98bb-74740976298f
+5a52e241-5877-595f-ac33-6ec5fa96b6ce	7e12b8f3-afc4-5469-a66c-9aca10407bfc
+5a52e241-5877-595f-ac33-6ec5fa96b6ce	d67838ea-6c89-5b6f-bc24-759af9d1bd98
+5a52e241-5877-595f-ac33-6ec5fa96b6ce	08b50231-ca3e-5375-90a0-a773756fd38d
+23b37dd2-760c-54c9-a675-bc5d907d9875	7e12b8f3-5511-5fe8-a250-a6f9e5a3baf7
+23b37dd2-760c-54c9-a675-bc5d907d9875	6e200ded-02c9-52ea-a752-40ddd32ebd98
+23b37dd2-760c-54c9-a675-bc5d907d9875	2e873fd8-6069-5677-87ae-4c31d883c4b4
+23b37dd2-760c-54c9-a675-bc5d907d9875	54ac4ef7-664c-5c51-b869-5b37872cf0c2
+23b37dd2-760c-54c9-a675-bc5d907d9875	8b43958a-e83f-574f-9c87-b826578cf69a
+23b37dd2-760c-54c9-a675-bc5d907d9875	78cc1ec8-d147-5962-86f2-b1966d1566a8
+23b37dd2-760c-54c9-a675-bc5d907d9875	59a5f226-05ce-5a9f-a840-fcb5769f91bb
+23b37dd2-760c-54c9-a675-bc5d907d9875	4f5927c8-45ce-5374-94fb-bcdaabe1bceb
+23b37dd2-760c-54c9-a675-bc5d907d9875	27518546-1dfd-51fc-b2d2-74a9cb6adaeb
+23b37dd2-760c-54c9-a675-bc5d907d9875	8bfb7427-ebfe-5995-8fb6-c8b968169675
+54371d2f-1c83-494c-bea0-7abaf9319e6b	7e12b8f3-4663-56eb-a393-e59a4fb2d94c
+54371d2f-1c83-494c-bea0-7abaf9319e6b	f07e973f-d1d8-4034-aa8b-3d2ebbbb672f
+54371d2f-1c83-494c-bea0-7abaf9319e6b	6d352052-14d8-43ee-b887-d7e9df9f33f0
+54371d2f-1c83-494c-bea0-7abaf9319e6b	5d51b1be-7db2-4d81-8e22-8ff0087606b2
+54371d2f-1c83-494c-bea0-7abaf9319e6b	dd954a97-bcbc-437e-aef2-67f306f99fbf
+54371d2f-1c83-494c-bea0-7abaf9319e6b	e899c9dc-3ba2-4b19-8830-073301b3ed14
+54371d2f-1c83-494c-bea0-7abaf9319e6b	df33942b-bdf4-4c23-8c1b-147478681049
+54371d2f-1c83-494c-bea0-7abaf9319e6b	738fdb6b-b44b-4eb3-a9b6-eae69a7f12c8
+54371d2f-1c83-494c-bea0-7abaf9319e6b	2ec82d7b-42c8-4eed-9d6c-9d9e8bce02b8
+54371d2f-1c83-494c-bea0-7abaf9319e6b	333f20d9-2b48-423c-a3ae-b614f7d27324
 e5468e08-24d6-5867-985d-0fd38b7bf58a	7e12b8f3-ef3a-5542-bb59-369d94639384
 e5468e08-24d6-5867-985d-0fd38b7bf58a	29725af3-ad60-5be0-b04f-8c7a0f9e59d6
 e5468e08-24d6-5867-985d-0fd38b7bf58a	2875ba32-cca3-54bb-a645-a4e3fd9f1047
@@ -1213,8 +1680,12 @@ a81b6caa-cffa-54a1-b556-51aed94bac1e	e2670054-a26a-5515-8db1-6a9aaf799fe4
 
 COPY public."Restaurant" ("phoneNumber", "restaurantName", rating, address) FROM stdin;
 +16027952555	Pomo Pizzeria (1st St & Pierce)	4.8	705 N 1st St, 120, Phoenix, AZ 85004
-+16026058010	Applebees (51st - Baseline)	4.1	5210 W Baseline Rd., Laveen, AZ 85339
 +16022720581	KFC (1525 N 43rd Ave)	4.3	1525 N 43rd Ave, Phoenix, AZ 85009
++16026058010	Applebee's (51st - Baseline)	4	5210 W Baseline Rd., Laveen, AZ 85339
++16027775072	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)	4.6	5130 W Baseline Rd Ste 105, Laveen, AZ 85339
++16022340857	Del Taco (305 E Thomas Rd | 1124)	4.4	305 E Thomas Rd, Phoenix, AZ 85012
++16023436973	NYPD Pizza (W McDowell)	4.7	556 W Mcdowell Rd, Phoenix, AZ 85003
++16022543171	Blue Fin	4.7	1401 N. Central Ave, Phoenix, AZ 85004
 \.
 
 
@@ -1223,6 +1694,30 @@ COPY public."Restaurant" ("phoneNumber", "restaurantName", rating, address) FROM
 --
 
 COPY public."RestaurantToCategory" ("categoryName", "restaurantName") FROM stdin;
+American	Applebee's (51st - Baseline)
+Burgers	Applebee's (51st - Baseline)
+Sandwich	Applebee's (51st - Baseline)
+Family Friendly	Applebee's (51st - Baseline)
+Comfort Food	Applebee's (51st - Baseline)
+Pasta	Applebee's (51st - Baseline)
+Salads	Applebee's (51st - Baseline)
+Sandwiches	Applebee's (51st - Baseline)
+Steak	Applebee's (51st - Baseline)
+Wings	Applebee's (51st - Baseline)
+Healthy	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)
+Mexican	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)
+Group Friendly	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)
+Fast Food	Del Taco (305 E Thomas Rd | 1124)
+Mexican	Del Taco (305 E Thomas Rd | 1124)
+Tacos	Del Taco (305 E Thomas Rd | 1124)
+Pizza	NYPD Pizza (W McDowell)
+American	NYPD Pizza (W McDowell)
+Italian	NYPD Pizza (W McDowell)
+Family Friendly	NYPD Pizza (W McDowell)
+Group Friendly	NYPD Pizza (W McDowell)
+Japanese	Blue Fin
+Asian	Blue Fin
+Sushi	Blue Fin
 Pizza	Pomo Pizzeria (1st St & Pierce)
 Italian	Pomo Pizzeria (1st St & Pierce)
 Family Friendly	Pomo Pizzeria (1st St & Pierce)
@@ -1251,8 +1746,12 @@ Group Friendly	KFC (1525 N 43rd Ave)
 
 COPY public."RestaurantToMenu" ("restaurantName", "menuId") FROM stdin;
 Pomo Pizzeria (1st St & Pierce)	e5468e08-24d6-5867-985d-0fd38b7bf58a
-Asian Dining (E McDowell Rd)	b82a3562-4c4c-49ec-8fe4-6c9f638a165a
 KFC (1525 N 43rd Ave)	a81b6caa-cffa-54a1-b556-51aed94bac1e
+Applebee's (51st - Baseline)	a47fc313-8938-5525-911c-e7917347c273
+Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)	2066f9bc-e9c3-5517-8b5e-260dcb54b4f7
+Del Taco (305 E Thomas Rd | 1124)	5a52e241-5877-595f-ac33-6ec5fa96b6ce
+NYPD Pizza (W McDowell)	23b37dd2-760c-54c9-a675-bc5d907d9875
+Blue Fin	54371d2f-1c83-494c-bea0-7abaf9319e6b
 \.
 
 
@@ -1261,6 +1760,43 @@ KFC (1525 N 43rd Ave)	a81b6caa-cffa-54a1-b556-51aed94bac1e
 --
 
 COPY public."RestaurantToReview" ("reviewId", "restaurantName") FROM stdin;
+67074873-4d57-4e44-b31d-3d8a4948927c	Applebee's (51st - Baseline)
+92a23a62-7c9b-4c1f-8c9f-4dff329a7261	Applebee's (51st - Baseline)
+f4b7cc19-fdd6-4a4f-b8b6-e6c5dbfd046c	Applebee's (51st - Baseline)
+d49eedb4-e644-4e02-99da-000370c97745	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)
+1323c1c2-fe2d-4900-9793-8e61cbc2e29d	Chipotle Mexican Grill (5130 W Baseline Rd Ste 105)
+752b663a-6c98-4bf0-b316-95e989149985	Del Taco (305 E Thomas Rd | 1124)
+8759b104-0760-4bd9-bf84-c5c95121a304	Del Taco (305 E Thomas Rd | 1124)
+def06b24-5e9d-49f2-82f5-053b7c23c3ab	Del Taco (305 E Thomas Rd | 1124)
+9364a2f2-1eca-4c80-b967-b3346f92ac4d	NYPD Pizza (W McDowell)
+496c6e85-3473-4332-a6a9-6effbf313a12	NYPD Pizza (W McDowell)
+e2afe63c-05c2-415b-8fe1-f0ee3744ce67	NYPD Pizza (W McDowell)
+4b635936-686a-4ba1-86b7-76976ec3ffda	NYPD Pizza (W McDowell)
+0a906011-bdd2-44c3-8858-f0ccafffeaa5	NYPD Pizza (W McDowell)
+4ce2ff5e-f6ef-4dd9-81bb-67fa8b0b4442	NYPD Pizza (W McDowell)
+1591d0f5-e9eb-4bfb-af6b-ff431cbf785f	NYPD Pizza (W McDowell)
+49795848-c89e-44e6-9086-08bfe65ecbea	NYPD Pizza (W McDowell)
+71165a3a-08b7-4bbf-acf9-e4d2e55d7325	NYPD Pizza (W McDowell)
+c0fef4e4-165b-49a6-9c7a-6f253895b7a8	NYPD Pizza (W McDowell)
+e7e1eb1f-49c6-465b-a40c-b4688ddf8851	NYPD Pizza (W McDowell)
+43f00bbd-d256-4ea8-8ad5-8756ac011d0e	NYPD Pizza (W McDowell)
+5e909bbf-a6ff-4e7f-a3fa-6eaba6fe07c5	NYPD Pizza (W McDowell)
+443a4892-4f28-41a5-9168-8b1263af6a48	NYPD Pizza (W McDowell)
+7af2cb94-6868-415a-93c4-71cbd7bb76a5	NYPD Pizza (W McDowell)
+2f6929a4-57b4-4171-858e-c7649899de22	NYPD Pizza (W McDowell)
+ec37c355-58c5-40a9-bd2f-254216dc6ea7	NYPD Pizza (W McDowell)
+b54039a0-8bbf-47fe-88d1-2f0220f83d99	NYPD Pizza (W McDowell)
+0b305de8-36c7-4def-beea-0ea813598132	NYPD Pizza (W McDowell)
+ca21e9cd-fd9c-465e-a352-a23d65ace2e7	NYPD Pizza (W McDowell)
+56f4fc95-0828-49f1-bf05-5d07c5965944	NYPD Pizza (W McDowell)
+f3c01bcc-c5b7-4b48-851b-c80268d25b44	NYPD Pizza (W McDowell)
+78a9d523-872d-4650-8328-2ed99d2b6dd1	NYPD Pizza (W McDowell)
+587d8d95-5890-4910-a746-fe0f94a17863	NYPD Pizza (W McDowell)
+758a6f74-33bc-42c9-b49d-281088b3c95d	NYPD Pizza (W McDowell)
+ccd27279-6703-4397-8330-05922956f3ec	NYPD Pizza (W McDowell)
+6ffbd605-cffe-4f74-a426-3ab48a0f58d1	Blue Fin
+d037254e-47e4-405d-b771-677bf8e505f9	Blue Fin
+cc1dfb0b-1766-4062-b612-18f22f8623f7	Blue Fin
 d4bf7deb-16a3-45ff-8edc-01e821db506d	Pomo Pizzeria (1st St & Pierce)
 e485d2c4-4bae-4491-bd96-b95764f1c507	Pomo Pizzeria (1st St & Pierce)
 da0f3c60-b831-44ff-9489-91f1906a6454	Pomo Pizzeria (1st St & Pierce)
@@ -1285,6 +1821,43 @@ e02999b8-c6f8-4db1-b4c0-db88e42608f2	KFC (1525 N 43rd Ave)
 --
 
 COPY public."Review" (text, reviewer, "reviewId") FROM stdin;
+Food and service was perfect.	Kevin W.	67074873-4d57-4e44-b31d-3d8a4948927c
+Food was great but didn't receive item I actually order been instead I got the pasta with chicken tenders look good I'm bout to go in	Gabriel C.	92a23a62-7c9b-4c1f-8c9f-4dff329a7261
+Exelente	Luis M.	f4b7cc19-fdd6-4a4f-b8b6-e6c5dbfd046c
+Great timely service.	Savannah S.	d49eedb4-e644-4e02-99da-000370c97745
+Quick and yummy	Jenifer M.	1323c1c2-fe2d-4900-9793-8e61cbc2e29d
+My Uber eats delivery drivers was very friendly and was able to get my food to me while it was still hot and fresh	Malik C.	752b663a-6c98-4bf0-b316-95e989149985
+Tacos rock	Santino C.	8759b104-0760-4bd9-bf84-c5c95121a304
+Wonderful	Robert B.	def06b24-5e9d-49f2-82f5-053b7c23c3ab
+Amazing food, calzones and garlic cheese knots are to die for! love it	Tulasi P.	9364a2f2-1eca-4c80-b967-b3346f92ac4d
+Delicious pizza... Best in the valley	Tulasi P.	496c6e85-3473-4332-a6a9-6effbf313a12
+When I'm in PHX, I love looking forward to ordering in NYPD pizza. The pizza is  consistently fresh and their pepperoni always hits the spot.	Vinodh Kumar Y.	e2afe63c-05c2-415b-8fe1-f0ee3744ce67
+I think the best thing that my husband and I love about them is their portions! They always hook us up when we order wings! Their flavors are great and so are their prices!	Pranaya B.	4b635936-686a-4ba1-86b7-76976ec3ffda
+Great food, always consistent ly good	Tulasi P.	0a906011-bdd2-44c3-8858-f0ccafffeaa5
+I love NYPD cause it's locally owned with the pizza around towwwnnn!!	Shyam S.	4ce2ff5e-f6ef-4dd9-81bb-67fa8b0b4442
+Great tasting pizza!	Sandi M.	1591d0f5-e9eb-4bfb-af6b-ff431cbf785f
+Extremely nice people! Great service and food! ??	Shyam S.	49795848-c89e-44e6-9086-08bfe65ecbea
+Great pizza	Blair H.	71165a3a-08b7-4bbf-acf9-e4d2e55d7325
+Food was good	Amanda L.	c0fef4e4-165b-49a6-9c7a-6f253895b7a8
+?always good food	Azharuddin M.	e7e1eb1f-49c6-465b-a40c-b4688ddf8851
+I love everything about thwir pizza,  the crust, the sauce, the cheese!! They have never failed me with my orders!	Aishwarya Y.	43f00bbd-d256-4ea8-8ad5-8756ac011d0e
+Great pizza. Amazing service. Love that NYPD Pizza	Tulasi P.	5e909bbf-a6ff-4e7f-a3fa-6eaba6fe07c5
+Was fast and friendly	Randy M.	443a4892-4f28-41a5-9168-8b1263af6a48
+Great ingredients and consistent! Customer for life!	Pola N.	7af2cb94-6868-415a-93c4-71cbd7bb76a5
+this pizza is delicious every time i order it!!	Karishma K.	2f6929a4-57b4-4171-858e-c7649899de22
+Great pizza and fast service.	Sai Krishna C.	ec37c355-58c5-40a9-bd2f-254216dc6ea7
+The food is great, not much else to say.	Azharuddin M.	b54039a0-8bbf-47fe-88d1-2f0220f83d99
+Always the best tasting pizza	Pranaya B.	0b305de8-36c7-4def-beea-0ea813598132
+It tastes like dollar pizza from New York if you ask for light cheese. I love the stuff.	Tulasi P.	ca21e9cd-fd9c-465e-a352-a23d65ace2e7
+Great at fulfilling large orders for the office and everyone loves the pizza, wings and mozarella!!	Pranaya B.	56f4fc95-0828-49f1-bf05-5d07c5965944
+Awesome as always!	Marcos M.	f3c01bcc-c5b7-4b48-851b-c80268d25b44
+Very good food!	Andela V.	78a9d523-872d-4650-8328-2ed99d2b6dd1
+Very good	Jouven L.	587d8d95-5890-4910-a746-fe0f94a17863
+Fantastic as always	Marcos M.	758a6f74-33bc-42c9-b49d-281088b3c95d
+Love this place best ny pizza	Isabelle O.	ccd27279-6703-4397-8330-05922956f3ec
+Delicious	Dwawn I.	6ffbd605-cffe-4f74-a426-3ab48a0f58d1
+love the panko ??	Karishma K.	d037254e-47e4-405d-b771-677bf8e505f9
+Amazing love this place been around for years!	Monica C.	cc1dfb0b-1766-4062-b612-18f22f8623f7
 Everything is delicious. This is Italian food made with the best ingredients by people who know what they are doing.	Rhea H.	d4bf7deb-16a3-45ff-8edc-01e821db506d
 love the food!	Nitesh S.	da0f3c60-b831-44ff-9489-91f1906a6454
 Good, quality, authentic Italian	Pranaya B.	4a8c4cc6-db6a-4111-a9d0-3320753cf67d

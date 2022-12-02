@@ -6,7 +6,14 @@
         <div><span style="font-weight: 600">Rating:</span> {{ restaurantData?.restaurant?.rating }}</div>
         <div><span style="font-weight: 600">Categories: </span><span *ngFor="let category of restaurantData?.categories; let isLast = last">{{ category.categoryName }}{{ isLast ? "" : ", " }}</span></div>
     </div>
-    <h2>{{ restaurantData?.menu?.menuName }} </h2>
+    <h2>Reviews</h2>
+    <div class="itemsContainer">
+        <div *ngFor="let review of restaurantData?.reviews" class="item">
+            <h4>{{ review.reviewer }} </h4>
+            <div>{{ review.text }}</div>
+        </div>
+    </div>
+    <h2 style="margin-top: 30px; margin-bottom: -20px">{{ restaurantData?.menu?.menuName }} </h2>
     <div *ngFor="let section of restaurantData?.menu?.sections" class="section">
         <div class="sectionHeader">
             <h3>{{ section.menuSectionName }}</h3>
